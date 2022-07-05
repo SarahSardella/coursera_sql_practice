@@ -1,0 +1,202 @@
+##########################################################
+##########################################################
+
+# Data Definition and Manipulation in SQL
+
+##########################################################
+##########################################################
+
+
+#############################
+-- Task Two: Data Definition
+-- In this task, you will learn how to create database objects (tables) in the database you created in task 1.
+#############################
+
+-- Creating the sales table
+
+CREATE TABLE sales (
+    purchase_number INT PRIMARY KEY,
+	date_of_purchase DATE NOT NULL,
+	customer_id INt NOT NULL,
+	item_code VARCHAR(10) NOT NULL
+);
+
+
+
+
+-- Creating the customers table
+
+CREATE TABLE customers(
+customer_id INT PRIMARY KEY,
+	first_name VARCHAR (255) NOT NULL,
+	last_name VARCHAR (255) NOT NULL,
+	email_address VARCHAR (255),
+	number_of_complaints INT
+);
+
+
+-- Creating the items table
+
+CREATE TABLE items (
+item_code VARCHAR(10) PRIMARY KEY,
+	item VARCHAR (255),
+	unit_price_usd DECIMAL(5,2),
+	company_id INT,
+	company_name VARCHAR(255) NOT NULL
+);
+
+#############################
+-- Task Three: Data Manipulation
+-- By the end of Task 3, you will be able to insert records into the tables created.
+#############################
+
+-- Insert five (5) records into the sales table
+
+INSERT INTO sales (purchase_number,date_of_purchase, customer_id, item_code)
+VALUES (1, '2020-05-28', 1, 'A11'),
+(2, '2020-05-27', 2, 'B11'),
+(3, '2020-05-27', 2, 'A12'),
+(4, '2020-05-31', 3, 'C11'),
+(5, '2020-05-31', 4, 'B12')
+;
+
+SELECT * FROM sales;
+
+-- Insert five (5) records into the customers table
+INSERT INTO customers (customer_id, first_name,last_name, email_address, number_of_complaints)
+VALUES (1, 'Olayinka', 'Arimoro', 'aoidastcmentoring@gmail.com', 0),
+(2, 'Marshall', 'Smith', 'marshalsmith@yahoo.uk', 2),
+(3, 'Ayomikun', 'Isijola', 'ayomakunisijola@gmail.com', 1),
+(4, 'Dorcas', 'Jacobs', 'dorcas39@gmail.com', 0),
+(5, 'Ebenezer', 'Jackson', 'ebenezerjackson1990@academy.com',5)
+;
+
+SELECT * from customers;
+
+-- Insert five (5) records into the items table
+INSERT INTO items
+VALUES ('A11', 'Flask', 12.50,1,'Company A'),
+('A12', 'Lamp', 10, 1, 'Company A'),
+('B11', 'Desk', 50, 2, 'Company B'),
+('B12', 'Chair', 150, 2, 'Company B'),
+('C11', 'Bicycle', 35.50, 3, 'Company C')
+;
+
+SELECT * FROM items;
+
+
+#############################
+-- Task Four: Data Manipulation - Part 2
+-- By the end of Task 4, you will be able to upload a csv file into your database 
+-- and insert records into duplicate tables. 
+#############################
+
+-- Create the companies table and upload the CSV file into the table
+
+CREATE TABLE companies (
+company_id INT PRIMARY KEY,
+company_name VARCHAR(255),
+headquarters_phone_number VARCHAR(255)
+);
+
+SELECT * FROM companies;
+
+
+-- Create the sales_dup table
+
+
+
+
+
+
+
+-- Create the customers_dup table
+
+
+
+
+
+
+-- Insert records from sales table into sales_dup table
+
+
+
+
+-- Insert records from customers table into customers_dup table
+
+
+
+
+
+
+#############################
+-- Task Five: Data Definition and Manipulation
+-- By the end of this task, you will be able to alter, rename and update data in tables in a database.
+#############################
+
+-- Add a new column gender after the last_name field
+-- We will perform this task using ALTER on the customers_dup table
+
+
+
+-- Insert new records to the customers_dup table
+
+
+
+
+
+
+-- Create a companies_dup table
+
+
+
+
+
+
+-- Insert records from companies table into the companies_dup table
+
+
+
+
+
+
+
+-- ALTER the companies_dup table to add a UNIQUE KEY constraint
+-- to the headquarters_phone_number field.
+
+
+
+-- Change the company_id column to be auto_increment
+
+
+
+-- Change the headquarters_phone_number field to VARCHAR(255) NOT NULL
+
+
+
+
+-- Use RENAME to give the sales_dup table a new name called sales_data
+
+
+
+-- We will UPDATE some records in the customers_dup table
+
+
+
+#############################
+-- Task Six: Drop Vs. Truncate Vs. Delete
+-- By the end of task 6, you will learn how to use SQL drop, truncate and delete statements. 
+-- In addition, you will understand the difference between SQL drop, truncate and delete statements.
+#############################
+
+
+-- DROP the customers_dup table
+
+
+
+-- TRUNCATE the sales_data table
+
+
+
+
+-- DELETE records from the companies_dup table
